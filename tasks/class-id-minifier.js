@@ -46,6 +46,9 @@ module.exports = function (grunt) {
 
         grunt.file.write(scssMapFile, classIdMinifier.getScssCode(classIdMap, options.scssMapFilter));
         grunt.file.write(jsMapFile, classIdMinifier.getJsCode(classIdMap, moduleName, options.jsMapFilter));
+
+        grunt.file.write(options.scssDevMapFile, classIdMinifier.getDevScssCode(classIdMap));
+        grunt.file.write(options.jsMapDevFile, classIdMinifier.getDevJsCode(classIdMap, moduleName));
     });
 
 };

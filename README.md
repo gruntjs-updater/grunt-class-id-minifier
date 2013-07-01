@@ -56,6 +56,18 @@ Required.
 
 A string value that is path of generated js map file.
 
+#### options.scssDevMapFile
+Type: `String`
+Required.
+
+A string value that is path of generated scss dev map file.
+
+#### options.jsDevMapFile
+Type: `String`
+Required.
+
+A string value that is path of generated js dev map file.
+
 #### options.moduleName
 Type: `String`
 Optional.
@@ -153,7 +165,7 @@ note: id and class name which starts with J_ will not be modified.
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-### 0.1.3
+### 0.2.0
 
 - support jsMapFilter/scssMapFilter/minifyFilter
 

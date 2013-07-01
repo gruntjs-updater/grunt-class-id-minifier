@@ -12,7 +12,7 @@ module.exports = function (grunt) {
 
         // Before generating any new files, remove any previously-created files.
         clean: {
-            tests: ['tmp']
+           tests: ['tmp']
         },
 
         // Configuration to be run (and then tested).
@@ -21,6 +21,8 @@ module.exports = function (grunt) {
                 options: {
                     scssMapFile: 'tmp/simple/map.scss',
                     jsMapFile: 'tmp/simple/map.js',
+                    scssDevMapFile: 'tmp/simple/map.dev.scss',
+                    jsMapDevFile: 'tmp/simple/map.dev.js',
                     minifyFilter: function (k, type) {
                         // type.id type.className
                         // J_ ignored in minified html
@@ -48,6 +50,8 @@ module.exports = function (grunt) {
                 options: {
                     scssMapFile: 'tmp/module/map.scss',
                     jsMapFile: 'tmp/module/map.js',
+                    scssDevMapFile: 'tmp/module/map.dev.scss',
+                    jsMapDevFile: 'tmp/module/map.dev.js',
                     moduleName: '',
                     excludeReg: {
                         id: /J_/,
