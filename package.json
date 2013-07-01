@@ -1,5 +1,5 @@
 {
-    "name": "class-id-minifier",
+    "name": "grunt-class-id-minifier",
     "description": "gruntplugin for class-id-minifier",
     "version": "0.1.0",
     "homepage": "https://github.com/yiminghe/grunt-class-id-minifier",
