@@ -11,22 +11,25 @@ as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile)
 as well as install and use Grunt plugins. Once you're familiar with that process,
 you may install this plugin with this command:
 
-    ```shell
+```shell
+
     npm install grunt-class-id-minifier --save-dev
-    ```
+```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
-    ```js
+```js
+
     grunt.loadNpmTasks('grunt-class-id-minifier');
-    ```
+```
 
 ## The "class-id-minifier" task
 
 ### Overview
 In your project's Gruntfile, add a section named `class-id-minifier` to the data object passed into `grunt.initConfig()`.
 
-    ``` js
+``` js
+
     grunt.initConfig({
       class-id-minifier: {
         options: {
@@ -37,7 +40,7 @@ In your project's Gruntfile, add a section named `class-id-minifier` to the data
         },
       },
     })
-    ```
+```
 
 ### Options
 
@@ -111,7 +114,8 @@ mapped scss, mapped js and modified html will be saved to tests/expect.
 
 note: id and class name which starts with J_ will not be modified.
 
-    ```js
+```js
+
     grunt.initConfig({
       class-id-minifier: {
         simple: {
@@ -143,7 +147,7 @@ note: id and class name which starts with J_ will not be modified.
         }
       }
     })
-    ```
+```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
