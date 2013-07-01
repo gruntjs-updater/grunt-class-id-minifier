@@ -26,7 +26,7 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 ### Overview
 In your project's Gruntfile, add a section named `class-id-minifier` to the data object passed into `grunt.initConfig()`.
 
-    ```js
+    ``` js
     grunt.initConfig({
       class-id-minifier: {
         options: {
