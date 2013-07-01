@@ -1,0 +1,46 @@
+{
+    "name": "class-id-minifier",
+    "description": "gruntplugin for class-id-minifier",
+    "version": "0.1.0",
+    "homepage": "https://github.com/yiminghe/grunt-class-id-minifier",
+    "author": {
+        "name": "yiminghe",
+        "email": "yiminghe@gmail.com",
+        "url": "http://docs.kissyui.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:yiminghe/grunt-class-id-minifier.git"
+    },
+    "bugs": {
+        "url": "https://github.com/yiminghe/grunt-class-id-minifier/issues"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/yiminghe/grunt-class-id-minifier/blob/master/LICENSE-MIT"
+        }
+    ],
+    "main": "Gruntfile.js",
+    "engines": {
+        "node": ">= 0.8.0"
+    },
+    "scripts": {
+        "test": "grunt test"
+    },
+    "dependencies": {
+        "class-id-minifier": "~0.1.0"
+    },
+    "devDependencies": {
+        "grunt-contrib-clean": "~0.4.0",
+        "grunt-contrib-nodeunit": "~0.2.0",
+        "grunt": "~0.4.1"
+    },
+    "peerDependencies": {
+        "grunt": "~0.4.1"
+    },
+    "keywords": [
+        "gruntplugin",
+        "class-id-minifier"
+    ]
+}
