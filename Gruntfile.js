@@ -21,9 +21,18 @@ module.exports = function (grunt) {
                 options: {
                     scssMapFile: 'tmp/simple/map.scss',
                     jsMapFile: 'tmp/simple/map.js',
-                    excludeReg: {
-                        id: /^J_/,
-                        css: /^J_/
+                    minifyFilter: function (k, type) {
+                        // type.id type.className
+                        // J_ ignored in minified html
+                        return /^J_/.test(k) ? false : true;
+
+                    },
+                    jsMapFilter: function (k, type) {
+                        // className ignored in js map
+                        return !!type.id;
+                    },
+                    scssMapFilter:function(k,type){
+                        return !!type.className;
                     }
                 },
                 files: [
@@ -39,7 +48,7 @@ module.exports = function (grunt) {
                 options: {
                     scssMapFile: 'tmp/module/map.scss',
                     jsMapFile: 'tmp/module/map.js',
-                    moduleName:'',
+                    moduleName: '',
                     excludeReg: {
                         id: /J_/,
                         css: /J_/

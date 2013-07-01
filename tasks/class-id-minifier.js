@@ -26,8 +26,6 @@ module.exports = function (grunt) {
 
         var moduleName = options.moduleName;
 
-        var excludeReg = options.excludeReg || {};
-
         var scssMapFile = options.scssMapFile;
         var jsMapFile = options.jsMapFile;
         var encoding = options.encoding || defaultEncoding;
@@ -39,15 +37,15 @@ module.exports = function (grunt) {
             var srcContent = grunt.file.read(src, {
                 encoding: encoding
             });
-            var transformContent = classIdMinifier.minify(srcContent, classIdMap,
-                excludeReg.id, excludeReg.css);
+            var transformContent = classIdMinifier.
+                minify(srcContent, classIdMap, options.minifyFilter);
             grunt.file.write(dest, transformContent.html, {
                 encoding: encoding
             });
         });
 
-        grunt.file.write(scssMapFile, classIdMinifier.getScssCode(classIdMap));
-        grunt.file.write(jsMapFile, classIdMinifier.getJsCode(classIdMap,moduleName));
+        grunt.file.write(scssMapFile, classIdMinifier.getScssCode(classIdMap, options.scssMapFilter));
+        grunt.file.write(jsMapFile, classIdMinifier.getJsCode(classIdMap, moduleName, options.jsMapFilter));
     });
 
 };

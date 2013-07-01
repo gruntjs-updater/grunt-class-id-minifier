@@ -3,6 +3,8 @@ KISSY.add(function () {
         "long": "a",
         "long1": "b",
         "long2": "c",
-        "cute2": "d"
+        "J_cute": "d",
+        "J_cute5": "e",
+        "cute2": "f"
     };
 });

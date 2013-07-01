@@ -59,11 +59,49 @@ Optional.
 
 A string value that is moduleName of generated js map file.
 
-#### options.excludeReg.css
-Type: `RegExp`
-Required.
+#### options.jsMapFilter
+Type: `Function(name,type)`
+Optional.
 
-A RegExp value that specify css class name which should not be minified.
+A function to filter whether name appears in js map file.
+
+##### options.jsMapFilter.name
+Type: `String`
+
+original name of class or id
+
+##### options.jsMapFilter.type.id
+Type: `Boolean`
+
+whether name is html id
+
+##### options.jsMapFilter.type.className
+Type: `Boolean`
+
+whether name is html className
+
+
+#### options.scssMapFilter
+Type: `Function(name,type)`
+Optional.
+
+A function to filter whether name appears in scss map file.
+
+##### options.scssMapFilter.name
+Type: `String`
+
+original name of class or id
+
+##### options.scssMapFilter.type.id
+Type: `Boolean`
+
+whether name is html id
+
+##### options.scssMapFilter.type.className
+Type: `Boolean`
+
+whether name is html className
+
 
 ### Usage Examples
 
@@ -78,11 +116,20 @@ note: id and class name which starts with J_ will not be modified.
       class-id-minifier: {
         simple: {
             options: {
-                scssMapFile: 'tmp/simple/map.scss',
-                jsMapFile: 'tmp/simple/map.js',
-                excludeReg: {
-                    id: /^J_/,
-                    css: /^J_/
+                scssMapFile: 'test/expected/simple/map.scss',
+                jsMapFile: 'test/expected/simple/map.js',
+                minifyFilter: function (k, type) {
+                    // type.id type.className
+                    // J_ ignored in minified html
+                    return /^J_/.test(k) ? false : true;
+
+                },
+                jsMapFilter: function (k, type) {
+                    // className ignored in js map
+                    return !!type.id;
+                },
+                scssMapFilter:function(k,type){
+                    return !!type.className;
                 }
             },
             files: [
@@ -90,7 +137,7 @@ note: id and class name which starts with J_ will not be modified.
                     expand: true,
                     cwd: 'test/fixtures/simple/',
                     src: '*.html',
-                    dest: 'tmp/simple/'
+                    dest: 'test/expected/simple/'
                 }
             ]
         }
