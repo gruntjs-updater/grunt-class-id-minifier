@@ -1,4 +1,4 @@
-# grunt-class-id-minifier
+# grunt-class-id-minifier [![Build Status](https://secure.travis-ci.org/yiminghe/grunt-class-id-minifier.png?branch=master)](https://travis-ci.org/yiminghe/grunt-class-id-minifier)
 
 > gruntplugin for grunt-class-id-minifier
 
