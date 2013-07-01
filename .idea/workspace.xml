@@ -18,7 +18,7 @@
     <file path="$PROJECT_DIR$/../class-id-minifier/tests/map.js" changelist="551d85b8-cabf-4933-9c9f-8ca33dd25ece" time="1372666816930" ignored="false" />
     <file path="$PROJECT_DIR$/../class-id-minifier/tests/map.scss" changelist="551d85b8-cabf-4933-9c9f-8ca33dd25ece" time="1372666276108" ignored="false" />
     <file path="/a.dummy" changelist="551d85b8-cabf-4933-9c9f-8ca33dd25ece" time="1372666439081" ignored="false" />
-    <file path="$PROJECT_DIR$/node_modules/class-id-minifier/lib/main.js" changelist="551d85b8-cabf-4933-9c9f-8ca33dd25ece" time="1372667213707" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/class-id-minifier/lib/main.js" changelist="551d85b8-cabf-4933-9c9f-8ca33dd25ece" time="1372676285261" ignored="false" />
     <file path="/test2.html" changelist="551d85b8-cabf-4933-9c9f-8ca33dd25ece" time="1372667884109" ignored="false" />
     <file path="/Dummy.txt" changelist="551d85b8-cabf-4933-9c9f-8ca33dd25ece" time="1372671749535" ignored="false" />
     <file path="$PROJECT_DIR$/../../kissy_git/kissy1.3/src/seed/src/web.js" changelist="551d85b8-cabf-4933-9c9f-8ca33dd25ece" time="1372671749535" ignored="false" />
@@ -27,6 +27,7 @@
     <file path="/meta.js" changelist="551d85b8-cabf-4933-9c9f-8ca33dd25ece" time="1372671986460" ignored="false" />
     <file path="$PROJECT_DIR$/../../kissy_git/kissy1.3/tools/version.xml" changelist="551d85b8-cabf-4933-9c9f-8ca33dd25ece" time="1372673992147" ignored="false" />
     <file path="/class-id-minifier-test.js" changelist="551d85b8-cabf-4933-9c9f-8ca33dd25ece" time="1372675780349" ignored="false" />
+    <file path="/README.md" changelist="551d85b8-cabf-4933-9c9f-8ca33dd25ece" time="1372676737079" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,39 +88,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="class-id-minifier-test.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/class-id-minifier-test.js">
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="64" selection-start="2677" selection-end="2677" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#704#922#0" expanded="true" />
-                <element signature="e#960#1182#0" expanded="true" />
-                <element signature="e#1220#1444#0" expanded="true" />
-                <element signature="e#1483#1709#0" expanded="true" />
-                <element signature="e#1764#1982#0" expanded="true" />
-                <element signature="e#2020#2242#0" expanded="true" />
-                <element signature="e#2280#2504#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="51" selection-start="1513" selection-end="1513" vertical-scroll-proportion="0.719603">
+            <state line="69" column="47" selection-start="1815" selection-end="1815" vertical-scroll-proportion="0.39790577">
               <folding />
             </state>
           </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="class-id-minifier.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tasks/class-id-minifier.js">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="83" selection-start="1602" selection-end="1602" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#1017#1435#0" expanded="true" />
-              </folding>
+            <state line="25" column="31" selection-start="722" selection-end="722" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,6 +128,7 @@
         <option value="$PROJECT_DIR$/tasks/class-id-minifier.js" />
         <option value="$PROJECT_DIR$/test/class-id-minifier-test.js" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -503,7 +489,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tasks/class-id-minifier.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="83" selection-start="1602" selection-end="1602" vertical-scroll-proportion="0.0">
+        <state line="49" column="83" selection-start="1602" selection-end="1602" vertical-scroll-proportion="0.86848634">
           <folding>
             <element signature="e#1017#1435#0" expanded="true" />
           </folding>
@@ -527,9 +513,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="51" selection-start="1513" selection-end="1513" vertical-scroll-proportion="0.719603">
+        <state line="25" column="31" selection-start="722" selection-end="722" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="47" selection-start="1815" selection-end="1815" vertical-scroll-proportion="0.39790577">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
       </provider>
     </entry>
   </component>

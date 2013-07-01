@@ -22,8 +22,8 @@ module.exports = function (grunt) {
                     scssMapFile: 'tmp/simple/map.scss',
                     jsMapFile: 'tmp/simple/map.js',
                     excludeReg: {
-                        id: /J_/,
-                        css: /J_/
+                        id: /^J_/,
+                        css: /^J_/
                     }
                 },
                 files: [
