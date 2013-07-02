@@ -19,9 +19,7 @@ module.exports = function (grunt) {
         'class-id-minifier': {
             simple: {
                 options: {
-                    scssMapFile: 'tmp/simple/map.scss',
                     jsMapFile: 'tmp/simple/map.js',
-                    scssDevMapFile: 'tmp/simple/map.dev.scss',
                     jsMapDevFile: 'tmp/simple/map.dev.js',
                     minifyFilter: function (k, type) {
                         // type.id type.className
@@ -32,25 +30,20 @@ module.exports = function (grunt) {
                     jsMapFilter: function (k, type) {
                         // className ignored in js map
                         return !!type.id;
-                    },
-                    scssMapFilter:function(k,type){
-                        return !!type.className;
                     }
                 },
                 files: [
                     {
                         expand: true,
                         cwd: 'test/fixtures/simple/',
-                        src: '*.html',
+                        src: '*.{html,css}',
                         dest: 'tmp/simple/'
                     }
                 ]
             },
             module: {
                 options: {
-                    scssMapFile: 'tmp/module/map.scss',
                     jsMapFile: 'tmp/module/map.js',
-                    scssDevMapFile: 'tmp/module/map.dev.scss',
                     jsMapDevFile: 'tmp/module/map.dev.js',
                     moduleName: '',
                     excludeReg: {
@@ -62,7 +55,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: 'test/fixtures/module/',
-                        src: '*.html',
+                        src: '*.{html,css}',
                         dest: 'tmp/module/'
                     }
                 ]

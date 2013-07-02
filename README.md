@@ -44,23 +44,11 @@ In your project's Gruntfile, add a section named `class-id-minifier` to the data
 
 ### Options
 
-#### options.scssMapFile
-Type: `String`
-Required.
-
-A string value that is path of generated scss map file.
-
 #### options.jsMapFile
 Type: `String`
 Required.
 
 A string value that is path of generated js map file.
-
-#### options.scssDevMapFile
-Type: `String`
-Required.
-
-A string value that is path of generated scss dev map file.
 
 #### options.jsDevMapFile
 Type: `String`
@@ -95,27 +83,9 @@ Type: `Boolean`
 
 whether name is html className
 
+#### files
 
-#### options.scssMapFilter
-Type: `Function(name,type)`
-Optional.
-
-A function to filter whether name appears in scss map file.
-
-##### options.scssMapFilter.name
-Type: `String`
-
-original name of class or id
-
-##### options.scssMapFilter.type.id
-Type: `Boolean`
-
-whether name is html id
-
-##### options.scssMapFilter.type.className
-Type: `Boolean`
-
-whether name is html className
+files of html and css files to be minified
 
 
 ### Usage Examples
@@ -132,8 +102,8 @@ note: id and class name which starts with J_ will not be modified.
       class-id-minifier: {
         simple: {
             options: {
-                scssMapFile: 'test/expected/simple/map.scss',
-                jsMapFile: 'test/expected/simple/map.js',
+                jsMapFile: 'tmp/simple/map.js',
+                jsMapDevFile: 'tmp/simple/map.dev.js',
                 minifyFilter: function (k, type) {
                     // type.id type.className
                     // J_ ignored in minified html
@@ -143,17 +113,14 @@ note: id and class name which starts with J_ will not be modified.
                 jsMapFilter: function (k, type) {
                     // className ignored in js map
                     return !!type.id;
-                },
-                scssMapFilter:function(k,type){
-                    return !!type.className;
                 }
             },
             files: [
                 {
                     expand: true,
                     cwd: 'test/fixtures/simple/',
-                    src: '*.html',
-                    dest: 'test/expected/simple/'
+                    src: '*.{html,css}',
+                    dest: 'tmp/simple/'
                 }
             ]
         }
@@ -165,6 +132,11 @@ note: id and class name which starts with J_ will not be modified.
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+### 0.3.0
+
+- remove scssMapFilter
+- support minify css file
+
 ### 0.2.0
 
 - support jsMapFilter/scssMapFilter/minifyFilter

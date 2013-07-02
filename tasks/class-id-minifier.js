@@ -17,6 +17,10 @@ module.exports = function (grunt) {
 
     var classIdMinifier = require('class-id-minifier');
 
+    function endsWith(str, suffix) {
+        var ind = str.length - suffix.length;
+        return ind >= 0 && str.indexOf(suffix, ind) == ind;
+    }
 
     grunt.registerMultiTask('class-id-minifier', 'minify class and id from html', function () {
         // Merge task-specific and/or target-specific options with these defaults.
@@ -25,18 +29,25 @@ module.exports = function (grunt) {
         var classIdMap = {};
 
         var moduleName = options.moduleName;
-
-        var scssMapFile = options.scssMapFile;
-        var jsMapFile = options.jsMapFile;
         var encoding = options.encoding || defaultEncoding;
+
+        var css = [];
 
         // Iterate over all specified file groups.
         this.files.forEach(function (f) {
             var src = f.src[0];
             var dest = f.dest;
+
             var srcContent = grunt.file.read(src, {
                 encoding: encoding
             });
+            if (endsWith(src, '.css')) {
+                css.push({
+                    content: srcContent,
+                    dest: dest
+                });
+                return;
+            }
             var transformContent = classIdMinifier.
                 minify(srcContent, classIdMap, options.minifyFilter);
             grunt.file.write(dest, transformContent.html, {
@@ -44,11 +55,21 @@ module.exports = function (grunt) {
             });
         });
 
-        grunt.file.write(scssMapFile, classIdMinifier.getScssCode(classIdMap, options.scssMapFilter));
-        grunt.file.write(jsMapFile, classIdMinifier.getJsCode(classIdMap, moduleName, options.jsMapFilter));
+        css.forEach(function (c) {
+            grunt.file.write(c.dest, classIdMinifier.getCssCode(classIdMap, c.content), {
+                encoding: encoding
+            });
+        });
 
-        grunt.file.write(options.scssDevMapFile, classIdMinifier.getDevScssCode(classIdMap));
-        grunt.file.write(options.jsMapDevFile, classIdMinifier.getDevJsCode(classIdMap, moduleName));
+        grunt.file.write(options.jsMapFile,
+            classIdMinifier.getJsCode(classIdMap, moduleName, options.jsMapFilter), {
+                encoding: encoding
+            });
+
+        grunt.file.write(options.jsMapDevFile,
+            classIdMinifier.getDevJsCode(classIdMap, moduleName), {
+                encoding: encoding
+            });
     });
 
 };
