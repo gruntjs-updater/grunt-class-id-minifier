@@ -42,7 +42,16 @@ exports.class_id_minifier = {
             test.done();
         },
 
-        'mapHtml': function (test) {
+        'minCss': function (test) {
+
+            var actual = grunt.file.read('tmp/simple/test.css');
+            var expected = grunt.file.read('test/expected/simple/test.css');
+            test.equal(actual, expected);
+
+            test.done();
+        },
+
+        'minHtml': function (test) {
 
             var actual = grunt.file.read('tmp/simple/test.html');
             var expected = grunt.file.read('test/expected/simple/test.html');
@@ -51,7 +60,7 @@ exports.class_id_minifier = {
             test.done();
         },
 
-        'mapHtml2': function (test) {
+        'minHtml2': function (test) {
 
             var actual = grunt.file.read('tmp/simple/test2.html');
             var expected = grunt.file.read('test/expected/simple/test2.html');
@@ -79,7 +88,16 @@ exports.class_id_minifier = {
             test.done();
         },
 
-        'mapHtml': function (test) {
+        'minCss': function (test) {
+
+            var actual = grunt.file.read('tmp/module/test.css');
+            var expected = grunt.file.read('test/expected/module/test.css');
+            test.equal(actual, expected);
+
+            test.done();
+        },
+
+        'minHtml': function (test) {
 
             var actual = grunt.file.read('tmp/module/test.html');
             var expected = grunt.file.read('test/expected/module/test.html');
@@ -88,7 +106,7 @@ exports.class_id_minifier = {
             test.done();
         },
 
-        'mapHtml2': function (test) {
+        'minHtml2': function (test) {
 
             var actual = grunt.file.read('tmp/module/test2.html');
             var expected = grunt.file.read('test/expected/module/test2.html');
