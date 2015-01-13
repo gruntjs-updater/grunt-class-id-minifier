@@ -1,4 +1,4 @@
-KISSY.add(function () {
+module.exports = (function () {
     return {
         "long": "a",
         "long1": "b",
